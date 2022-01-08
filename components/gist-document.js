@@ -1,11 +1,13 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Comment from './comment';
+import Link from 'next/link';
 
 export default function GistDocument({ gistData, commentData }) {
-  const filename = Object.keys(gistData.files)
+  const files = gistData.files || [];
+  const filename = Object.keys(files)
                          .find(x => x.endsWith('.md'));
-  const { content } = gistData.files[filename] || {};
+  const { content } = (gistData.files && gistData.files[filename]) || {};
 
   return (
     <div className={'content'}>
@@ -17,7 +19,7 @@ export default function GistDocument({ gistData, commentData }) {
             {content}
           </ReactMarkdown>
         ) : (
-          <div>This gist is not supported. <a href="/">Go home</a>.</div>
+          <div>This gist is not supported. <Link href="/">Go home</Link>.</div>
         )
       }
 

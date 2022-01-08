@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
 import Head from 'next/head';
+import Link from 'next/link';
+import useSWR from 'swr';
 
 import GistDocumentSkeleton from '../../components/gist-document-skeleton';
 import GistDocument from '../../components/gist-document';
@@ -38,9 +39,9 @@ function Page() {
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
       </Head>
       <div className={'page-header'}>
-        <a href="/">
+        <Link href="/">
           <Logo />
-        </a>
+        </Link>
       </div>
       <GistDocument
         gistData={gistData}

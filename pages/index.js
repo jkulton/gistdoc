@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/image';
+import Head from 'next/head';
+import Link from 'next/link';
 import useSWR from 'swr';
 
 import GistDocumentSkeleton from '../components/gist-document-skeleton';
@@ -28,9 +29,9 @@ export default function Home() {
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
       </Head>
       <div className={'page-header'}>
-        <a href="/" aria-label="gistdoc">
+        <Link href="/" aria-label="gistdoc">
           <Logo />
-        </a>
+        </Link>
       </div>
       <GistDocument gistData={gistData} />
       <Footer/>

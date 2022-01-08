@@ -1,6 +1,7 @@
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import Image from 'next/image';
 import dayjs from 'dayjs';
 
 export default function Comment({
@@ -13,7 +14,7 @@ export default function Comment({
   return (
     <li className={'comment'}>
       <div className={'comment-header'}>
-        <img src={avatarUrl} />
+        <Image src={avatarUrl} />
         <span>{username}{' '}</span>
         <span>{dayjs(createdAt).format('lll')}</span>
       </div>

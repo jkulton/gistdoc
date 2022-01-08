@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 export default function Footer({ url = '/' }) {
   return (
     <div className={'footer'}>
-      <a href={url}>gistdoc</a>
+      <Link href={url}>gistdoc</Link>
     </div>
   );
 }

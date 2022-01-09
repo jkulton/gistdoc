@@ -2,29 +2,27 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Comment from './comment';
 import Link from 'next/link';
+import { findMarkdownFile } from '../lib/utility';
 
 export default function GistDocument({ gistData, commentData }) {
-  const files = gistData.files || [];
-  const filename = Object.keys(files)
-                         .find(x => x.endsWith('.md'));
-  const { content } = (gistData.files && gistData.files[filename]) || {};
+  const files = gistData.files || {};
+  const filenames = Object.keys(files);
+  const markdownFile = findMarkdownFile(filenames);
+
+  if (!markdownFile) {
+    return <div>This gist is not supported. <Link href="/">Go home</Link>.</div>;
+  }
+
+  const { content } = gistData.files[markdownFile];
 
   return (
     <div className={'content'}>
       {
-        content ? (
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            >
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {content}
           </ReactMarkdown>
-        ) : (
-          <div>This gist is not supported. <Link href="/">Go home</Link>.</div>
-        )
       }
-
-
-{/*      { 
+{/*      {
         commentData && commentData.length ?
         (
           <div>
@@ -50,6 +48,7 @@ export default function GistDocument({ gistData, commentData }) {
         null :
         <div>comments loading...</div>
       }*/}
+    
     </div>
   );
 }

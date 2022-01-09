@@ -33,9 +33,6 @@ export default function Home() {
           <a aria-label='gistdoc'><Logo /></a>
         </Link>
       </div>
-      <div className={'home-banner'}>
-        <Logo />
-      </div>
       <GistDocument gistData={gistData} />
       <Footer/>
     </div>

@@ -29,8 +29,8 @@ export default function Home() {
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
       </Head>
       <div className={'page-header'}>
-        <Link href="/" aria-label="gistdoc">
-          <Logo />
+        <Link href='/'>
+          <a aria-label='gistdoc'><Logo /></a>
         </Link>
       </div>
       <GistDocument gistData={gistData} />

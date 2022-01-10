@@ -2,7 +2,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 
 body {
   background-color: #FFF;
-  color: #333;
+  color: #222;
   font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   word-wrap: break-word;
   line-height: 1.7;
@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #0058af;
+  color: #1676d5;
   text-decoration: none;
 }
 
@@ -33,13 +33,13 @@ ul, ol {
 
 h1 {
   /*border-bottom: 1px solid #ddd;*/
-  color: #000;
+  color: #222;
   font-size: 2.5em;
 }
 
 h2 {
   /*border-bottom: 1px solid #eee;*/
-  color: #000;
+  color: #222;
   font-size: 2.0em;
 }
 
@@ -62,7 +62,7 @@ h6 {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  line-height: 1.7;
+  line-height: 1.25;
   margin: 1em 0 15px 0;
 }
 
@@ -92,6 +92,9 @@ pre > code {
   line-height: 1.45;
   border-radius: 6px;
   display: block;
+  background: #4a4a4a;
+  color: #fff;
+  border-color: #202020;
 }
 
 .content {
@@ -162,7 +165,7 @@ pre > code {
 
 .footer a {
   display: block;
-  color: #000;
+  color: #222;
   font-size: .8rem;
   opacity: .25;
   transition: 400ms ease opacity;
@@ -296,8 +299,12 @@ ol ol {
   text-align: center;
 }
 
+.content .gist-failed h2 {
+  text-align: left;
+}
+
 .content table{border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #d8dee4}
-.content table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}
+.content table caption{color:#222;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}
 .content table td,
 .content table th{border-left:1px solid #d8dee4;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.3em .7em}
 .content table thead{vertical-align:bottom}

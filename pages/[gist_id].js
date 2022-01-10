@@ -11,6 +11,22 @@ import constants from '../constants';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
+function FailedToLoadGist() {
+  return (
+    <div className={'content'}>
+      <div className={'gist-failed'}>
+        <h2>Failed to load gist</h2>
+
+        <p>Something went wrong.</p>
+
+        <Link href="/">
+          <a>Go home</a>
+        </Link>.
+      </div>
+    </div>
+  );
+}
+
 function Page() {
   const router = useRouter();
   const { gist_id } = router.query;
@@ -18,37 +34,38 @@ function Page() {
   // const gistCommentsUrl = `${constants.GITHUB_API_BASE_URL}/gists/${gist_id}/comments`;
 
   const { data: gistData, error: gistError } = useSWR(gist_id ? gistUrl : null, fetcher);
+  // const { data: commentData, error: commentError } = useSWR(gistData ? gistCommentsUrl : null, fetcher);
 
-  console.log({ gistData });
-
-  // const {
-  //   data: commentData,
-  //   error: commentError
-  // } = useSWR(gistData ? gistCommentsUrl : null, fetcher);
-
-  if (gistError) return <div>failed to load gist</div>;
-  if (!gistData) return <GistDocumentSkeleton/>;
+  const title = gistData ? `Gistdoc ${gistData.description}` : "Gistdoc";
+  const description = gistData ? gistData.description : "Gistdoc"; 
 
   return (
     <div>
       <Head>
-        <meta name="description" content={gistData.description} />
-        <title>gistdoc - {gistData.description}</title>
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
-        (
-          gistData?.public && gistData.public === true ?
-          null :
-          <meta name="robots" content="noindex"/>
-        )
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        {
+          gistData?.public === false && <meta name="robots" content="noindex"/>
+        }
       </Head>
       <div className={'page-header'}>
         <Link href='/'>
-          <a aria-label='gistdoc'><Logo /></a>
+          <a aria-label='Gistdoc'><Logo /></a>
         </Link>
       </div>
-      <GistDocument
-        gistData={gistData}
-      />
+      {
+        // Error
+        gistError ? (
+          <FailedToLoadGist />
+        ) : !gistData ? (
+        // Loading
+          <GistDocumentSkeleton/>
+        ) : (
+        // Gist
+          <GistDocument gistData={gistData} />
+        )
+      }
       <Footer/>
     </div>
   );

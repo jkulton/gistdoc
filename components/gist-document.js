@@ -1,9 +1,9 @@
+import { findMarkdownFile } from '../lib/utility';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Comment from './comment';
-import Link from 'next/link';
-import { findMarkdownFile } from '../lib/utility';
 import Image from 'next/image';
+import Link from 'next/link';
 import dayjs from 'dayjs';
 
 function GistMeta({ author, updatedAt, gistURL }) {
@@ -26,32 +26,49 @@ function GistMeta({ author, updatedAt, gistURL }) {
   );
 }
 
+function UnsupportedGist() {
+  return (
+    <div className={'content'}>
+      <div className={'gist-failed'}>
+        <h2>Unsupported gist</h2>
+
+        <p>Gists without markdown files aren't supported.</p>
+
+        <Link href="/">
+          <a>Go home</a>
+        </Link>.
+      </div>
+    </div>
+  );
+}
+
 export default function GistDocument({ gistData, commentData, showMeta = true }) {
   const files = gistData.files || {};
   const filenames = Object.keys(files);
   const markdownFile = findMarkdownFile(filenames);
 
-  if (!markdownFile) {
-    return <div>This gist is not supported. <Link href="/">Go home</Link>.</div>;
-  }
+  if (!markdownFile) return <UnsupportedGist />;
 
   const { content } = gistData.files[markdownFile];
 
   return (
     <div className={'content'}>
       <div className={'content-markdown'}>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        <ReactMarkdown
+          children={content}
+          remarkPlugins={[remarkGfm]}
+        />
       </div>
       {
-        showMeta ? (
-          <GistMeta
-            author={gistData.owner}
-            updatedAt={gistData.updated_at}
-            gistURL={gistData.html_url}
-          />
-        ) : null
+        showMeta && 
+        <GistMeta
+          author={gistData.owner}
+          updatedAt={gistData.updated_at}
+          gistURL={gistData.html_url}
+        />
       }
-{/*      {
+      {/*
+      {
         commentData && commentData.length ?
         (
           <div>
@@ -76,8 +93,8 @@ export default function GistDocument({ gistData, commentData, showMeta = true })
         commentData && !commentData.length ?
         null :
         <div>comments loading...</div>
-      }*/}
-    
+      }
+      */}
     </div>
   );
 }

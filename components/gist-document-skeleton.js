@@ -3,14 +3,8 @@ import remarkGfm from 'remark-gfm';
 import Comment from './comment';
 
 export default function GistDocumentSkeleton() {
-  const style = {
-    display: 'flex',
-    justifyContent: 'center',
-    paddingTop: '50px'
-  };
-
   return (
-    <div style={style}>
+    <div>
       <svg
         role="img"
         width="722"

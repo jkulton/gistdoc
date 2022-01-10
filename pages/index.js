@@ -15,15 +15,11 @@ export default function Home() {
   const gistUrl = `${constants.GITHUB_API_BASE_URL}/gists/${constants.GIST.HOME}`;
   const { data: gistData, error: gistError } = useSWR(gistUrl, fetcher);
 
-  console.log({ gistData });
-
-  if (!gistData) return <GistDocumentSkeleton/>;
-
   return (
     <div>
       <Head>
-        <meta name="description" content={gistData.description} />
-        <title>gistdoc - {gistData.description}</title>
+        <meta name="description" content={'View gists in a clean blog-like format.'} />
+        <title>gistdoc</title>
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
       </Head>
       <div className={'page-header'}>
@@ -32,7 +28,7 @@ export default function Home() {
             <Logo />
           </a>
         </Link>
-        <ul class={'page-header-right'}>
+        <ul className={'page-header-right'}>
           <li>
             <Link href={`/${constants.GIST.CHANGELOG}`}>
               <a>Changelog</a>
@@ -43,7 +39,13 @@ export default function Home() {
       <div className={'home-banner'}>
         <Logo />
       </div>
-      <GistDocument gistData={gistData} showMeta={false} />
+      {
+        gistData ? (
+          <GistDocument gistData={gistData} showMeta={false} />
+        ) : (
+          <GistDocumentSkeleton />
+        )
+      }
       <Footer/>
     </div>
   )

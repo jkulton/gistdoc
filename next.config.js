@@ -4,6 +4,12 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    domains: [
+      'githubusercontent.com',
+      'avatars.githubusercontent.com'
+    ]
+  },
   async redirects() {
     return [
       {

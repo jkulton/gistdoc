@@ -32,13 +32,13 @@ ul, ol {
 }
 
 h1 {
-  /*border-bottom: 1px solid #ddd;*/
+  border-bottom: 1px solid #eee;
   color: #222;
   font-size: 2.5em;
 }
 
 h2 {
-  /*border-bottom: 1px solid #eee;*/
+  border-bottom: 1px solid #f7f7f7;
   color: #222;
   font-size: 2.0em;
 }
@@ -238,6 +238,7 @@ pre > code {
 .home-banner svg {
   width:  100px;
   height:  auto;
+  transform: rotate(6deg);
 }
 
 ul ul,
@@ -310,8 +311,3 @@ ol ol {
 .content table thead{vertical-align:bottom}
 .content table td{background-color:transparent;border-top: 1px solid #d8dee4}
 .content table tr:nth-child(3n-1) td{background-color:#f6f8fa}
-.pure-table-bordered td{border-bottom:1px solid #d8dee4}
-.pure-table-bordered tbody>tr:last-child>td{border-bottom-width:0}
-.pure-table-horizontal td,
-.pure-table-horizontal th{border-width:0 0 1px 0;border-bottom:1px solid #d8dee4}
-.pure-table-horizontal tbody>tr:last-child>td{border-bottom-width:0}

@@ -30,12 +30,6 @@ export default function GistDocumentSkeleton() {
               <rect x="0" y="160" rx="3" ry="3" width="722" height="10" /> 
               <rect x="0" y="190" rx="3" ry="3" width="722" height="10" /> 
               <rect x="0" y="220" rx="3" ry="3" width="361" height="10" /> 
-              <rect x="290" y="396" rx="0" ry="0" width="0" height="1" /> 
-              <rect x="0" y="269" rx="3" ry="3" width="722" height="10" /> 
-              <rect x="0" y="299" rx="3" ry="3" width="722" height="10" /> 
-              <rect x="0" y="329" rx="3" ry="3" width="722" height="10" /> 
-              <rect x="0" y="359" rx="3" ry="3" width="722" height="10" /> 
-              <rect x="0" y="389" rx="3" ry="3" width="361" height="10" />
           </clipPath>
           <linearGradient id="fill">
             <stop

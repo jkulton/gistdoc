@@ -1,7 +1,6 @@
 import { findMarkdownFile } from '../lib/utility';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import Comment from './comment';
 import Link from 'next/link';
 import dayjs from 'dayjs';
 

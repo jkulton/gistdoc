@@ -1,6 +1,5 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import Comment from './comment';
 
 export default function GistDocumentSkeleton() {
   return (

@@ -45,6 +45,7 @@ function Page() {
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <script defer data-domain="gistdoc.com" src="https://plausible.io/js/plausible.js"></script>
         {
           gistData?.public === false && <meta name="robots" content="noindex"/>
         }

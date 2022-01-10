@@ -20,6 +20,7 @@ export default function Home() {
         <meta name="description" content={'View gists in a clean blog-like format.'} />
         <title>gistdoc</title>
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
+        <script defer data-domain="gistdoc.com" src="https://plausible.io/js/plausible.js"></script>
       </Head>
       <div className={'page-header'}>
         <Link href='/'>

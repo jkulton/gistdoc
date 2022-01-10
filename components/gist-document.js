@@ -3,8 +3,30 @@ import remarkGfm from 'remark-gfm';
 import Comment from './comment';
 import Link from 'next/link';
 import { findMarkdownFile } from '../lib/utility';
+import Image from 'next/image';
+import dayjs from 'dayjs';
 
-export default function GistDocument({ gistData, commentData }) {
+function GistMeta({ author, updatedAt, gistURL }) {
+  const { login, avatar_url, html_url } = author;
+
+  return (
+    <div className={'gist-meta'}>
+      <Link href={html_url}>
+        <a className={'gist-meta-author'}>
+          <img src={avatar_url} alt="author's avatar" />{login}
+        </a>
+      </Link>
+
+      <Link href={gistURL}>
+        <a className={'gist-meta-date'}>
+          {dayjs(updatedAt).format('MMM D, YYYY')}
+        </a>
+      </Link>
+    </div>
+  );
+}
+
+export default function GistDocument({ gistData, commentData, showMeta = true }) {
   const files = gistData.files || {};
   const filenames = Object.keys(files);
   const markdownFile = findMarkdownFile(filenames);
@@ -17,10 +39,17 @@ export default function GistDocument({ gistData, commentData }) {
 
   return (
     <div className={'content'}>
+      <div className={'content-markdown'}>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      </div>
       {
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {content}
-          </ReactMarkdown>
+        showMeta ? (
+          <GistMeta
+            author={gistData.owner}
+            updatedAt={gistData.updated_at}
+            gistURL={gistData.html_url}
+          />
+        ) : null
       }
 {/*      {
         commentData && commentData.length ?

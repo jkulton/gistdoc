@@ -12,12 +12,10 @@ import constants from '../constants';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Home() {
-  const gistUrl = `${constants.GITHUB_API_BASE_URL}/gists/${constants.HOMEPAGE_GIST_ID}`;
+  const gistUrl = `${constants.GITHUB_API_BASE_URL}/gists/${constants.GIST.HOME}`;
+  const { data: gistData, error: gistError } = useSWR(gistUrl, fetcher);
 
-  const {
-    data: gistData,
-    error: gistError
-  } = useSWR(gistUrl, fetcher);
+  console.log({ gistData });
 
   if (!gistData) return <GistDocumentSkeleton/>;
 
@@ -30,13 +28,22 @@ export default function Home() {
       </Head>
       <div className={'page-header'}>
         <Link href='/'>
-          <a aria-label='gistdoc'><Logo /></a>
+          <a aria-label='gistdoc'>
+            <Logo />
+          </a>
         </Link>
+        <ul class={'page-header-right'}>
+          <li>
+            <Link href={`/${constants.GIST.CHANGELOG}`}>
+              <a>Changelog</a>
+            </Link>
+          </li>
+        </ul>
       </div>
       <div className={'home-banner'}>
         <Logo />
       </div>
-      <GistDocument gistData={gistData} />
+      <GistDocument gistData={gistData} showMeta={false} />
       <Footer/>
     </div>
   )

@@ -32,7 +32,7 @@ function UnsupportedGist() {
       <div className={'gist-failed'}>
         <h2>Unsupported gist</h2>
 
-        <p>Gists without markdown files aren't supported.</p>
+        <p>Gists without markdown files aren&apos;t supported.</p>
 
         <Link href="/">
           <a>Go home</a>
@@ -54,10 +54,7 @@ export default function GistDocument({ gistData, commentData, showMeta = true })
   return (
     <div className={'content'}>
       <div className={'content-markdown'}>
-        <ReactMarkdown
-          children={content}
-          remarkPlugins={[remarkGfm]}
-        />
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
       </div>
       {
         showMeta && 

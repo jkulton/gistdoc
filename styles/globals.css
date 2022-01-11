@@ -208,6 +208,11 @@ pre > code {
   width: 32px;
 }
 
+.footnotes {
+  font-size: .85em;
+  color: #555;
+}
+
 .footnotes li {
   position: relative;
 }
@@ -223,7 +228,6 @@ pre > code {
   border: 2px solid #1f6eeb;
   border-radius: 6px;
 }
-
 
 .home-banner {
   display: flex;

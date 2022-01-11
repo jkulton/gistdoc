@@ -306,6 +306,12 @@ ol ol {
   text-align: left;
 }
 
+.content-markdown > blockquote {
+  border-left: 4px solid #eee;
+  background-color: #f7f7f7;
+  padding: 0.5rem 1rem;
+}
+
 .content table{border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #d8dee4}
 .content table caption{color:#222;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}
 .content table td,

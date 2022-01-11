@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #1676d5;
+  color: #4848ff;
   text-decoration: none;
 }
 
@@ -208,6 +208,11 @@ pre > code {
   width: 32px;
 }
 
+.footnotes {
+  font-size: .85em;
+  color: #555;
+}
+
 .footnotes li {
   position: relative;
 }
@@ -220,10 +225,9 @@ pre > code {
   left: -24px;
   pointer-events: none;
   content: "";
-  border: 2px solid #1f6eeb;
+  border: 2px solid #4848ff;
   border-radius: 6px;
 }
-
 
 .home-banner {
   display: flex;

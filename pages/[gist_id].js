@@ -8,8 +8,7 @@ import GistDocument from '../components/gist-document';
 import Footer from '../components/footer';
 import Logo from '../components/logo';
 import constants from '../constants';
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
+import { fetcher } from '../lib/utility';
 
 function FailedToLoadGist() {
   return (

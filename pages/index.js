@@ -7,8 +7,7 @@ import GistDocument from '../components/gist-document';
 import Footer from '../components/footer';
 import Logo from '../components/logo';
 import constants from '../constants';
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
+import { fetcher } from '../lib/utility';
 
 export default function Home() {
   const gistUrl = `${constants.GITHUB_API_BASE_URL}/gists/${constants.GIST.HOME}`;
@@ -18,7 +17,7 @@ export default function Home() {
     <div>
       <Head>
         <meta name="description" content={'View gists in a clean blog-like format.'} />
-        <title>gistdoc</title>
+        <title>Gistdoc</title>
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
         <script defer data-domain="gistdoc.com" src="https://plausible.io/js/plausible.js"></script>
       </Head>

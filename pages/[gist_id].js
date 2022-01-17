@@ -44,6 +44,7 @@ function Page() {
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script defer data-domain="gistdoc.com" src="https://plausible.io/js/plausible.js"></script>
         {
           gistData?.public === false && <meta name="robots" content="noindex"/>

@@ -14,7 +14,7 @@ export default function Home() {
   const { data: gistData, error: gistError } = useSWR(gistUrl, fetcher);
 
   return (
-    <div>
+    <div className={'home'}>
       <Head>
         <meta name="description" content={'View gists in a clean blog-like format.'} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

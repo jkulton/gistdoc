@@ -55,18 +55,20 @@ function Page() {
           <a aria-label='Gistdoc'><Logo /></a>
         </Link>
       </div>
-      {
-        // Error
-        gistError ? (
-          <FailedToLoadGist />
-        ) : !gistData ? (
-        // Loading
-          <GistDocumentSkeleton/>
-        ) : (
-        // Gist
-          <GistDocument gistData={gistData} />
-        )
-      }
+      <div className={'gist-view'}>
+        {
+          // Error
+          gistError ? (
+            <FailedToLoadGist />
+          ) : !gistData ? (
+          // Loading
+            <GistDocumentSkeleton/>
+          ) : (
+          // Gist
+            <GistDocument gistData={gistData} />
+          )
+        }
+      </div>
       <Footer/>
     </div>
   );

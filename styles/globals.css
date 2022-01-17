@@ -234,7 +234,6 @@ pre > code {
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  margin-bottom: -100px;
 }
 
 .home-banner svg {
@@ -292,6 +291,15 @@ ol ol {
   font-size:  .9em;
 }
 
+.gist-document-skeleton {
+  padding: 1rem;
+  width: 100%;
+}
+
+.gist-document-skeleton rect[width="600"] {
+  width: 100%;
+}
+
 .content h1:first-child,
 .content h2:first-child,
 .content h3:first-child,
@@ -310,6 +318,18 @@ ol ol {
   border-left: 4px solid #eee;
   background-color: #f7f7f7;
   padding: 0.5rem 1rem;
+}
+
+.gist-view .content > .gist-document-skeleton {
+  padding-top: calc(1rem + 1em);
+}
+
+.home .content {
+  padding-top: 0;
+}
+
+.home .content .gist-document-skeleton {
+  margin-top: 1rem;
 }
 
 .content table{border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #d8dee4}

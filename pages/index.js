@@ -23,6 +23,7 @@ export default function Home() {
 
         <meta name="title" content="Gistdoc" />
         <meta name="description" content="Quickly view GitHub markdown gists as simple blog-style pages" />
+        <meta name="theme-color" content="#222222" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gistdoc.com/" />

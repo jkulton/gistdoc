@@ -35,7 +35,7 @@ function Page() {
   const { data: gistData, error: gistError } = useSWR(gist_id ? gistUrl : null, fetcher);
   // const { data: commentData, error: commentError } = useSWR(gistData ? gistCommentsUrl : null, fetcher);
 
-  const title = gistData ? `Gistdoc ${gistData.description}` : "Gistdoc";
+  const title = gistData ? `${gistData.description} | Gistdoc` : "Gistdoc";
   const description = gistData ? gistData.description : "Gistdoc"; 
 
   return (

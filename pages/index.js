@@ -28,13 +28,13 @@ export default function Home() {
         <meta property="og:url" content="https://gistdoc.com/" />
         <meta property="og:title" content="Gistdoc" />
         <meta property="og:description" content="Quickly view GitHub markdown gists as simple blog-style pages" />
-        <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+        <meta property="og:image" content="/banner-min.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://gistdoc.com/" />
         <meta property="twitter:title" content="Gistdoc" />
         <meta property="twitter:description" content="Quickly view GitHub markdown gists as simple blog-style pages" />
-        <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+        <meta property="twitter:image" content="/banner-min.png" />
       </Head>
       <div className={'page-header'}>
         <Link href='/'>

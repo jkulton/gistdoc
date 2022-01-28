@@ -1,3 +1,5 @@
+<img src="./public/gistdoc.png" width="160" alt="gistdoc logo" />
+
 # Gistdoc
 
 Quickly view GitHub markdown gists as simple blog-style pages

@@ -5,8 +5,8 @@
 Quickly view GitHub markdown gists as simple blog-style pages
 
 ## Usage
-1. Go to a GitHub gist with at least one markdown file
-2. Change the domain in your browser from `gist.github.com` to `gistdoc.com`
+1. Go to any GitHub gist with at least one markdown file
+2. Change the domain in your browser from [`gist.github.com`](https://gist.github.com/) to [`gistdoc.com`](https://gistdoc.com/)
 3. Hit enter
 4. 🎉
 

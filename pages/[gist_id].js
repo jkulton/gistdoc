@@ -30,10 +30,10 @@ function Page() {
   const router = useRouter();
   const { gist_id } = router.query;
   const gistUrl = `${constants.GITHUB_API_BASE_URL}/gists/${gist_id}`;
-  // const gistCommentsUrl = `${constants.GITHUB_API_BASE_URL}/gists/${gist_id}/comments`;
+  const gistCommentsUrl = `${constants.GITHUB_API_BASE_URL}/gists/${gist_id}/comments`;
 
   const { data: gistData, error: gistError } = useSWR(gist_id ? gistUrl : null, fetcher);
-  // const { data: commentData, error: commentError } = useSWR(gistData ? gistCommentsUrl : null, fetcher);
+  const { data: commentData, error: commentError } = useSWR(gistData && gistData.comments > 0 ? gistCommentsUrl : null, fetcher);
 
   const title = gistData ? `${gistData.description} | Gistdoc` : "Gistdoc";
   const description = gistData ? gistData.description : "Gistdoc"; 
@@ -66,7 +66,7 @@ function Page() {
             <GistDocumentSkeleton/>
           ) : (
           // Gist
-            <GistDocument gistData={gistData} />
+            <GistDocument gistData={gistData} commentData={commentData} />
           )
         }
       </div>

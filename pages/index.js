@@ -56,7 +56,7 @@ export default function Home() {
       </div>
       {
         gistData ? (
-          <GistDocument gistData={gistData} showMeta={false} />
+          <GistDocument gistData={gistData} showMeta={false} showComments={false} />
         ) : (
           <GistDocumentSkeleton />
         )

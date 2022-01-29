@@ -83,7 +83,7 @@ function GistComments({ gistData, commentData }) {
         )
       }
       <div className={'comments-cta'}>
-        <a href={gistData.html_url} target="_blank">
+        <a href={gistData.html_url} target="_blank" rel="noreferrer">
           Comment on Github
         </a>
       </div>

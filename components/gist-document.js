@@ -69,6 +69,7 @@ function GistComments({ gistData, commentData }) {
           <ul className={'comments-list'}>
             {commentData.map(comment => 
               <Comment
+                key={comment.id}
                 body={comment.body}
                 createdAt={comment.created_at}
                 username={comment.user.login}

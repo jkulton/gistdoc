@@ -106,8 +106,12 @@ pre > code {
   margin: 0 auto;
 }
 
+.comments-list {
+  padding: 0;
+}
+
 .comments {
-  margin: 0;
+  margin: 4rem 0 0 0;
   padding: 0;
 }
 
@@ -115,10 +119,7 @@ pre > code {
   list-style-type: none;
   border-bottom: 1px solid #f7f7f7;
   margin-bottom: 1rem;
-}
-
-.comment-body {
-  padding: 0 1rem 0 calc(36px + .5rem);
+  padding:  1rem 0;
 }
 
 .comment-header {
@@ -126,29 +127,52 @@ pre > code {
   display: flex;
   -moz-box-align: center;
   align-items: center;
-  color: #888;
+}
+
+.content .comments > h2:first-child {
+  font-size:  1.5rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.comment-body p > img {
+  margin:  0;
+}
+
+.comment-date {
+    font-size: .9rem;
+    color: #767676;
 }
 
 .comment-header img {
-  max-width: 36px;
+  max-width: 28px;
   border-radius: 100%;
   margin-right: .5rem;
 }
 
-.comment-header span {
+.comment-author {
   margin-right: .5rem;
+  font-size: .9rem;
+  color: #888;
+}
+
+.comments-cta a {
+  display: block;
+  padding:  1rem;
+  text-align: center;
+  color: #999;
+  background: #f7f7f7;
+  border-radius: 4px;
+  width:  100%;
+  margin: 0 auto;
+  transition: 200ms ease all;
   font-size: .9rem;
 }
 
-.comments-cta {
-  display: block;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  color: #555;
-  background: #f7f7f7;
-  border-radius: 4px;
-  max-width: 250px;
-  margin: 0 auto;
+.comments-cta a:hover {
+  color: #222;
+  background: #eee;
+  text-decoration: none;
 }
 
 .footer {

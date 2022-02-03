@@ -306,7 +306,13 @@ ol ol {
 }
 
 .gist-meta a {
-  font-size:  .9em;
+  font-size: .9em;
+}
+
+.comment-author,
+.comment-date,
+.gist-meta a {
+  color: #6f7578;
 }
 
 .gist-document-skeleton {
@@ -436,5 +442,11 @@ ol ol {
 
   .gist-document-skeleton rect {
     fill: #161b22;
+  }
+
+  .comment-author,
+  .comment-date,
+  .gist-meta a {
+    color: #949da1;
   }
 }

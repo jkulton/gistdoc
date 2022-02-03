@@ -2,7 +2,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 
 body {
   background-color: #FFF;
-  color: #222;
+  color: #28303d;
   font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   word-wrap: break-word;
   line-height: 1.7;
@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #4848ff;
+  color: #175be1;
   text-decoration: none;
 }
 
@@ -32,12 +32,12 @@ ul, ol {
 }
 
 h1 {
-  color: #222;
+  color: #28303d;
   font-size: 2.5em;
 }
 
 h2 {
-  color: #222;
+  color: #28303d;
   font-size: 2.0em;
 }
 
@@ -73,14 +73,14 @@ hr {
 }
   
 code {
-  background-color: #F8F8F8;
   border-radius: 3px;
-  border: 1px solid #DDD;
   font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro","Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   font-size: 13px;
   margin: 0 2px;
   padding: 2px 5px;
   white-space: pre;
+  background: #f6f8fa;
+  border: 1px solid #e3e8eb;
 }
 
 pre > code {
@@ -90,9 +90,6 @@ pre > code {
   line-height: 1.45;
   border-radius: 6px;
   display: block;
-  background: #4a4a4a;
-  color: #fff;
-  border-color: #202020;
 }
 
 .content {
@@ -139,9 +136,9 @@ pre > code {
   margin:  0;
 }
 
-.comment-date {
+.comment-date,
+.comment-author {
     font-size: .9rem;
-    color: #767676;
 }
 
 .comment-header img {
@@ -152,16 +149,14 @@ pre > code {
 
 .comment-author {
   margin-right: .5rem;
-  font-size: .9rem;
-  color: #888;
 }
 
 .comments-cta a {
   display: block;
   padding:  1rem;
   text-align: center;
-  color: #999;
-  background: #f7f7f7;
+  color: #6f7578;
+  background: #f5f8fa;
   border-radius: 4px;
   width:  100%;
   margin: 0 auto;
@@ -170,8 +165,8 @@ pre > code {
 }
 
 .comments-cta a:hover {
-  color: #222;
-  background: #eee;
+  color: #28303d;
+  background: #eff3f5;
   text-decoration: none;
 }
 
@@ -234,7 +229,7 @@ pre > code {
 
 .footnotes {
   font-size: .85em;
-  color: #555;
+  color: #57606a;
 }
 
 .footnotes li {
@@ -311,7 +306,6 @@ ol ol {
 }
 
 .gist-meta a {
-  color:  #555;
   font-size:  .9em;
 }
 
@@ -330,7 +324,7 @@ ol ol {
 .content h4:first-child,
 .content h5:first-child,
 .content h6:first-child {
-  font-weight: 900;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -340,7 +334,6 @@ ol ol {
 
 .content-markdown > blockquote {
   border-left: 4px solid #eee;
-  background-color: #f7f7f7;
   padding: 0.5rem 1rem;
 }
 
@@ -363,3 +356,85 @@ ol ol {
 .content table thead{vertical-align:bottom}
 .content table td{background-color:transparent;border-top: 1px solid #d8dee4}
 .content table tr:nth-child(3n-1) td{background-color:#f6f8fa}
+
+.content-markdown > blockquote>:first-child {
+  margin-top: 0;
+}
+
+.content-markdown > blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    /* font-smoothing disabled seems better in dark mode? */
+    -webkit-font-smoothing: initial;
+  }
+
+  .content table tr:nth-child(3n-1) td{background-color:#161b22}
+
+  .content table th,
+  .content table td,
+  .content table {
+    border-color: #30363d;
+  }
+
+  .footnotes {
+    color: #8b949e;
+  }
+
+  .footer a {
+    color:  #fff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+  }
+
+  a {
+    color: #4e86f5;
+  }
+
+  code {
+    background-color: #343942;
+    border-color: #4c4c4c;
+  }
+
+  pre code {
+    background: #161b22;
+    border: 0;
+    color: #c9d1d9;
+  }
+
+  .comments-cta a {
+    background: #161b22;
+    color: #8b97a3;
+  }
+
+  .comments-cta a:hover {
+    color: #fff;
+    background: #2a2f36;
+  }
+
+  .content-markdown > blockquote {
+    color: #8b949e;
+    border-left-color:  currentColor;
+  }
+
+  .footnotes hr,
+  .gist-meta,
+  .comment {
+    border-color: #30363d;
+  }
+
+  .gist-document-skeleton rect {
+    fill: #161b22;
+  }
+}

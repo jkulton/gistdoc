@@ -19,7 +19,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Gistdoc</title>
         <link rel="preconnect" href="https://user-images.githubusercontent.com/" />
-        <script defer data-domain="gistdoc.com" src="https://plausible.io/js/plausible.js"></script>
 
         <meta name="title" content="Gistdoc" />
         <meta name="description" content="Quickly view GitHub markdown gists as simple blog-style pages" />

@@ -45,7 +45,7 @@ function Page() {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1d1d1d" />
+        <meta name="theme-color" content="#0d1117" />
         {
           gistData?.public === false && <meta name="robots" content="noindex"/>
         }

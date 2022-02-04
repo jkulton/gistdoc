@@ -22,7 +22,7 @@ export default function Home() {
 
         <meta name="title" content="Gistdoc" />
         <meta name="description" content="Quickly view GitHub markdown gists as simple blog-style pages" />
-        <meta name="theme-color" content="#1d1d1d" />
+        <meta name="theme-color" content="#0d1117" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gistdoc.com/" />
@@ -46,6 +46,11 @@ export default function Home() {
           <li>
             <Link href={`/${constants.GIST.CHANGELOG}`}>
               <a>Changelog</a>
+            </Link>
+          </li>
+          <li>
+            <Link href={'https://github.com/jkulton/gistdoc'}>
+              <a>GitHub</a>
             </Link>
           </li>
         </ul>

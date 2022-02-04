@@ -4,7 +4,7 @@
 
 Quickly view GitHub markdown gists as simple blog-style pages
 
-## Usage
+## How to use
 1. Go to any GitHub gist with at least one markdown file
 2. Change the domain in your browser from [`gist.github.com`](https://gist.github.com/) to [`gistdoc.com`](https://gistdoc.com/)
 3. Hit enter
@@ -37,9 +37,6 @@ Make sure your gist includes a file ending in either .md or .markdown.
 
 ### Are there any limits?
 Gistdoc uses your browser to retrieve gist content from the GitHub API. GitHub's endpoint for getting gists has a limit of 60 requests per hour for non-authenticated clients. It's unlikely you will exceed this limit while using Gistdoc unless you are viewing many documents in a short period of time. If you want to check your usage look at [the GitHub rate limit API route](https://api.github.com/rate_limit).
-
-### Who made this?
-[@jkulton](https://twitter.com/jkulton)
 
 ### Feedback
 [hello@gistdoc.com](mailto:hello@gistdoc.com)

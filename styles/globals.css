@@ -174,6 +174,7 @@ pre > code {
   display: -moz-box;
   display: flex;
   padding: 0 1rem;
+  margin: 1rem 0;
   -moz-box-align: center;
   align-items: center;
   -moz-box-pack: center;
@@ -182,8 +183,6 @@ pre > code {
 
 .footer a {
   display: block;
-  color: #222;
-  font-size: .8rem;
   opacity: .25;
   transition: 400ms ease opacity;
   text-align: center;
@@ -191,12 +190,11 @@ pre > code {
 }
 
 .footer a:hover {
-  text-decoration: none;
   opacity: 1;
 }
 
 .footer a svg {
-  width: 24px;
+  width: 28px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -222,6 +220,8 @@ pre > code {
   margin-left:  auto;
 }
 
+.page-header a[aria-label="gistdoc"],
+.page-header a[aria-label="Gistdoc"],
 .page-header svg {
   height: 32px;
   width: 32px;

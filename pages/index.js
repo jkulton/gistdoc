@@ -48,6 +48,11 @@ export default function Home() {
               <a>Changelog</a>
             </Link>
           </li>
+          <li>
+            <Link href={'https://github.com/jkulton/gistdoc'}>
+              <a>GitHub</a>
+            </Link>
+          </li>
         </ul>
       </div>
       <div className={'home-banner'}>

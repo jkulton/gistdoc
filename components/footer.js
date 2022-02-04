@@ -7,9 +7,7 @@ export default function Footer({ url = '/' }) {
       <Link href={url}>
         <a aria-label='gistdoc'>
           <Logo />
-          <span>Gistdoc</span>
         </a>
-
       </Link>
     </div>
   );

@@ -218,6 +218,17 @@ pre > code {
 
 .page-header .page-header-right {
   margin-left:  auto;
+  display: flex;
+}
+
+.page-header-right a {
+  padding: .5rem .75rem;
+  border-radius:  4px;
+}
+
+.page-header-right a:hover {
+  background: #eaf1ff;
+  text-decoration: none;
 }
 
 .page-header a[aria-label="gistdoc"],
@@ -405,7 +416,7 @@ ol ol {
   }
 
   a {
-    color: #4e86f5;
+    color: #429eff;
   }
 
   code {
@@ -448,5 +459,9 @@ ol ol {
   .comment-date,
   .gist-meta a {
     color: #949da1;
+  }
+
+  .page-header-right a:hover {
+    background-color: #072646;
   }
 }

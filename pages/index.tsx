@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import useSWR from 'swr';
 
-import GistDocumentSkeleton from '../components/gist-document-skeleton';
-import GistDocument from '../components/gist-document';
+import {GistDocument, GistDocumentSkeleton} from '../components/gist-document';
+
 import Footer from '../components/footer';
 import Logo from '../components/logo';
 import constants from '../constants';

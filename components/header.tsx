@@ -29,7 +29,7 @@ export default function Header({ variant }: HeaderProps) {
               </li>
               <li>
                 <Link
-                  href={"https://github.com/jkulton/gistdoc"}
+                  href="https://github.com/jkulton/gistdoc"
                   variant="button"
                 >
                   GitHub

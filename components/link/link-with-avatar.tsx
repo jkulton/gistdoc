@@ -15,9 +15,9 @@ export default function LinkWithAvatar({
   return (
     <Link
       href={href}
-      {...rest}
       variant="subtle"
       className="flex items-center text-gray-500"
+      {...rest}
     >
       <img
         src={avatarUrl}

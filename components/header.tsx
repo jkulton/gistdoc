@@ -10,7 +10,7 @@ export default function Header({ variant }: HeaderProps) {
   return (
     <header>
       <nav>
-        <ol className="p-4 flex items-center gap-4 pr-4">
+        <ol className="p-4 flex items-center gap-4">
           <li className="flex-1">
             <Link
               href="/"

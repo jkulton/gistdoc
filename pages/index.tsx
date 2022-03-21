@@ -17,7 +17,7 @@ export default function Home() {
   const { data: gistData, error: gistError } = useSWR(gistUrl, fetcher);
 
   return (
-    <div>
+    <div className="flex flex-col">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Gistdoc</title>
@@ -59,7 +59,7 @@ export default function Home() {
       </Head>
       <Header />
       <Logo className="w-[110px] h-[110px] mx-auto" />
-      <div className="mx-auto mt-6 max-w-[722px] mb-5 px-5">
+      <div className="w-[722px] max-w-full px-5 self-center">
         {gistData ? (
           <GistDocument
             gistData={gistData}

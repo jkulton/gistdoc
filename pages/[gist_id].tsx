@@ -44,7 +44,7 @@ function Page() {
         {gistData?.public === false && <meta name="robots" content="noindex" />}
       </Head>
       <Header variant="minimal" />
-      <div className="mx-auto mt-6 w-[722px] mb-5">
+      <div className="w-[722px] max-w-full px-5 self-center">
         {
           // Error
           gistError ? (

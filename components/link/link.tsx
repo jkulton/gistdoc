@@ -23,7 +23,10 @@ export default function Link({
 
   return (
     <NextLink href={href}>
-      <a {...props} className={`${baseClasses} ${className}`} />
+      <a
+        {...props}
+        className={`${baseClasses}${className ? ` ${className}` : ""}`}
+      />
     </NextLink>
   );
 }

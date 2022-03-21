@@ -1,9 +1,12 @@
-export default function Logo() {
+import { SVGAttributes } from "react";
+
+export default function Logo(props: SVGAttributes<SVGElement>) {
   return (
     <svg
       viewBox="-10 -10 190 190"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g transform="rotate(5, 85, 85)">
         <path

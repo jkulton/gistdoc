@@ -2,8 +2,6 @@ export default function GistDocumentSkeleton() {
   return (
     <svg
       role="img"
-      width="600"
-      height="722"
       aria-labelledby="loading-aria"
       viewBox="0 0 600 722"
       preserveAspectRatio="none"

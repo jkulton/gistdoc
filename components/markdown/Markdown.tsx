@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Link } from "../link";
 
 interface MarkdownProps {
   document: string;
@@ -10,6 +11,7 @@ const proseClasses = [
   "prose",
   "dark:prose-invert",
   "max-w-full",
+  "prose-h1:text-center",
   "prose-hr:border-t-2",
   "prose-hr:border-t-gray-100",
   "dark:prose-hr:border-t-gray-700",
@@ -19,7 +21,7 @@ const proseClasses = [
   "dark:even:prose-tr:bg-gray-500",
   "prose-td:p-2",
   "prose-th:p-2",
-  "prose-a:text-blue-600",
+  "prose-a:text-sky-600",
 ].join(" ");
 
 export default function Markdown({ document, className }: MarkdownProps) {
@@ -31,13 +33,13 @@ export default function Markdown({ document, className }: MarkdownProps) {
         a: ({ node, ...props }) => {
           if (props.role === "doc-backlink") {
             return (
-              <a {...props} className="ml-1">
+              <Link {...props} className="ml-1">
                 ^
-              </a>
+              </Link>
             );
           }
 
-          return <a {...props} />;
+          return <Link {...props} />;
         },
       }}
     >

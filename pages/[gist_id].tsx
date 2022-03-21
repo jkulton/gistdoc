@@ -43,7 +43,7 @@ function Page() {
         <meta name="theme-color" content="#0d1117" />
         {gistData?.public === false && <meta name="robots" content="noindex" />}
       </Head>
-      <Header />
+      <Header variant="minimal" />
       <div className="mx-auto mt-6 w-[722px] mb-5">
         {
           // Error

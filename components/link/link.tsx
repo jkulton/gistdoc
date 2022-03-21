@@ -2,19 +2,24 @@ import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import { AnchorHTMLAttributes } from "react";
 
 export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  variant?: "normal" | "subtle";
+  variant?: "normal" | "subtle" | "button";
 }
+
+const classes = {
+  normal: "text-sky-600 no-underline hover:underline",
+  subtle: "text-gray-400",
+  button:
+    "rounded-md px-3 py-2 text-sky-600 hover:bg-blue-100 dark:hover:bg-blue-900 dark:hover:text-sky-300/90",
+};
 
 export default function Link({
   href,
   variant = "normal",
   ...props
 }: React.PropsWithChildren<LinkProps>) {
-  const color =
-    variant === "normal" ? "text-blue-600" : "text-gray-400 font-light";
   return (
     <NextLink href={href}>
-      <a {...props} className={`${color} ${props.className}`} />
+      <a {...props} className={`${classes[variant]} ${props.className}`} />
     </NextLink>
   );
 }

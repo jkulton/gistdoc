@@ -22,6 +22,7 @@ const proseClasses = [
   "prose-td:p-2",
   "prose-th:p-2",
   "prose-a:text-sky-600",
+  "prose-a:font-normal",
 ].join(" ");
 
 export default function Markdown({ document, className }: MarkdownProps) {

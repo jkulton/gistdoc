@@ -36,7 +36,7 @@ export default function GistComments({
           href={gistUrl}
           target="_blank"
           rel="noreferrer"
-          className="bg-gray-100 dark:bg-gray-500 text-gray-500 dark:text-gray-100 block p-4 text-center rounded-full"
+          className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-100 block p-4 text-center rounded-full"
         >
           Comment on Github
         </a>

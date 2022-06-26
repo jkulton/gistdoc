@@ -14,20 +14,17 @@ import { createHighlighterTokensFromStyles } from "./utils";
 import styles from "./syntax-highlighter.module.css";
 
 export interface SyntaxHighlighterProps {
-  children: React.ReactNode;
+  code: string;
   language: string;
-  onLoaded: () => void;
 }
 
 const highlightStyle = createHighlighterTokensFromStyles(styles);
 
 export default function SyntaxHighlighter({
   language,
-  children = "",
-  onLoaded = () => {},
+  code = "",
 }: SyntaxHighlighterProps) {
   const editorViewRef = useRef<EditorView>();
-  const [loading, setLoading] = useState(true);
   const languageConfig = languages.find((langConfig) =>
     langConfig.alias.includes(language)
   );
@@ -37,7 +34,6 @@ export default function SyntaxHighlighter({
     let mounted = true;
 
     (async function () {
-      setLoading(true);
       const languageSupport = await languageConfig.load();
 
       if (block.current && mounted) {
@@ -64,13 +60,12 @@ export default function SyntaxHighlighter({
         ];
 
         let view = new EditorView({
-          doc: String(children).trimEnd(),
+          doc: code.trimEnd(),
           extensions,
           parent: block.current,
         });
 
         editorViewRef.current = view;
-        setLoading(false);
       }
     })();
 
@@ -79,13 +74,7 @@ export default function SyntaxHighlighter({
       // If there's a view, destroy it.
       editorViewRef.current?.destroy();
     };
-  }, []);
-
-  useEffect(() => {
-    if (!loading) {
-      onLoaded();
-    }
-  }, [loading]);
+  }, [languageConfig, code]);
 
   return <div ref={block} className={styles.codeBlock}></div>;
 }

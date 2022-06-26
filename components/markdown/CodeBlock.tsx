@@ -1,8 +1,11 @@
 import dynamic from "next/dynamic";
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useState, Suspense } from "react";
 
 const SyntaxHighlighter = dynamic(
-  () => import("../syntax-highlighter/syntax-highlighter")
+  () => import("../syntax-highlighter/syntax-highlighter"),
+  {
+    suspense: true,
+  }
 );
 
 interface CodeBlockProps {
@@ -19,8 +22,6 @@ export default function CodeBlock({
     return null;
   }
 
-  const [codeViewLoaded, setCodeViewLoaded] = useState(false);
-
   if (inline) {
     return (
       <code data-inline="data-inline" className={className}>
@@ -30,17 +31,13 @@ export default function CodeBlock({
   }
 
   const language = className.replace("language-", "");
+  const codeToParse = String(children?.[0] || "");
+
   return (
     <code className={className}>
-      {codeViewLoaded ? null : children}
-      <SyntaxHighlighter
-        language={language}
-        onLoaded={() => {
-          setCodeViewLoaded(true);
-        }}
-      >
-        {children}
-      </SyntaxHighlighter>
+      <Suspense fallback={codeToParse}>
+        <SyntaxHighlighter language={language} code={codeToParse} />
+      </Suspense>
     </code>
   );
 }

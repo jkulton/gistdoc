@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "../link";
+import CodeBlock from "./CodeBlock";
 
 interface MarkdownProps {
   document: string;
@@ -42,6 +43,7 @@ export default function Markdown({ document, className }: MarkdownProps) {
 
           return <Link {...props} />;
         },
+        code: CodeBlock,
       }}
     >
       {document}

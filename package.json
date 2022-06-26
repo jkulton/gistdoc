@@ -4,9 +4,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf .next node_modules"
   },
   "dependencies": {
+    "@codemirror/language": "^6.1.0",
+    "@codemirror/language-data": "^6.1.0",
+    "@codemirror/state": "^6.0.1",
+    "@codemirror/view": "^6.0.2",
+    "@lezer/highlight": "^1.0.0",
     "dayjs": "^1.10.7",
     "next": "12.1.0",
     "react": "17.0.2",

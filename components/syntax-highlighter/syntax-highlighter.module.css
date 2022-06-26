@@ -1,0 +1,88 @@
+.codeBlock {
+  --code-syntax-plain: #ffffff;
+  --code-syntax-comment: #757575;
+  --code-syntax-keyword: #37b9e5;
+  --code-syntax-tag: #975cdf;
+  --code-syntax-punctuation: #ffffff;
+  --code-syntax-definition: #86d9ca;
+  --code-syntax-property: #34d087;
+  --code-syntax-definition-property: #34d087;
+  --code-syntax-variable: #34d087;
+  --code-syntax-definition-variable: #ea8347;
+  --code-syntax-static: #ea8347;
+  --code-syntax-string: #977cdc;
+  --code-syntax-literal: #cec336;
+  --code-syntax-atom: #f66de8;
+  --code-syntax-bracket: #9d78ff;
+  --code-syntax-quotes: #a25cdf;
+}
+
+.keyword,
+.moduleKeyword {
+  color: var(--code-syntax-keyword);
+  font-weight: 500;
+}
+
+.string {
+  color: var(--code-syntax-string);
+}
+
+.variableName {
+  color: var(--code-syntax-variable);
+}
+
+.definition_variableName {
+  color: var(--code-syntax-definition-variable);
+}
+
+.plain {
+  color: var(--code-syntax-plain);
+}
+
+.comment {
+  color: var(--code-syntax-comment);
+}
+
+.property {
+  color: var(--code-syntax-property);
+}
+
+.tag {
+  color: var(--code-syntax-property);
+}
+
+.punctuation {
+  color: var(--code-syntax-punctuation);
+}
+
+.number {
+  color: var(--code-syntax-static);
+}
+
+.atom {
+  color: var(--code-syntax-atom);
+}
+
+.brace,
+.quote,
+.doubleQuote {
+  color: var(--code-syntax-quotes);
+}
+
+.angleBracket,
+.squareBracket,
+.paren {
+  color: var(--code-syntax-bracket);
+}
+
+.labelName,
+.typeName,
+.operator,
+.literal,
+.propertyName {
+  color: var(--code-syntax-literal);
+}
+
+.definition_propertyName {
+  color: var(--code-syntax-definition-property);
+}

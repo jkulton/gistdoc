@@ -1,20 +1,24 @@
 .codeBlock {
   --code-syntax-plain: #ffffff;
-  --code-syntax-comment: #757575;
-  --code-syntax-keyword: #37b9e5;
-  --code-syntax-tag: #975cdf;
+  --code-syntax-comment: #616e88;
+  --code-syntax-keyword: #81a1c1;
+  --code-syntax-tag: #d08770;
   --code-syntax-punctuation: #ffffff;
-  --code-syntax-definition: #86d9ca;
-  --code-syntax-property: #34d087;
-  --code-syntax-definition-property: #34d087;
-  --code-syntax-variable: #34d087;
-  --code-syntax-definition-variable: #ea8347;
-  --code-syntax-static: #ea8347;
-  --code-syntax-string: #977cdc;
-  --code-syntax-literal: #cec336;
-  --code-syntax-atom: #f66de8;
-  --code-syntax-bracket: #9d78ff;
-  --code-syntax-quotes: #a25cdf;
+  --code-syntax-property: #81a1c1;
+  --code-syntax-propertyname: #8fbcbb;
+  --code-syntax-definition-name: red;
+  --code-syntax-definition-property: #88c0d0;
+  --code-syntax-variable: #d8dee9;
+  --code-syntax-function-variable: #8fbcbb;
+  --code-syntax-definition-variable: #d8dee9;
+  --code-syntax-static: #b48ead;
+  --code-syntax-string: #a3be8c;
+  --code-syntax-special-string: #d08770;
+  --code-syntax-literal: #d8dee9;
+  --code-syntax-atom: #b48ead;
+  --code-syntax-bracket: #e5e9f0;
+  --code-syntax-quotes: #e5e9f0;
+  --code-syntax-brace: #e5e9f0;
 }
 
 .keyword,
@@ -23,6 +27,8 @@
   font-weight: 500;
 }
 
+.processingInstruction,
+.inserted,
 .string {
   color: var(--code-syntax-string);
 }
@@ -35,6 +41,10 @@
   color: var(--code-syntax-definition-variable);
 }
 
+.function_variableName {
+  color: var(--code-syntax-function-variable);
+}
+
 .plain {
   color: var(--code-syntax-plain);
 }
@@ -43,12 +53,9 @@
   color: var(--code-syntax-comment);
 }
 
-.property {
-  color: var(--code-syntax-property);
-}
-
-.tag {
-  color: var(--code-syntax-property);
+.tag,
+.tagName {
+  color: var(--code-syntax-tag);
 }
 
 .punctuation {
@@ -59,11 +66,16 @@
   color: var(--code-syntax-static);
 }
 
-.atom {
+.atom,
+.bool,
+.special_variableName {
   color: var(--code-syntax-atom);
 }
 
-.brace,
+.brace {
+  color: var(--code-syntax-brace);
+}
+
 .quote,
 .doubleQuote {
   color: var(--code-syntax-quotes);
@@ -77,12 +89,31 @@
 
 .labelName,
 .typeName,
-.operator,
-.literal,
+.property {
+  color: var(--code-syntax-property);
+}
+
 .propertyName {
+  color: var(--code-syntax-propertyname);
+}
+
+.operator,
+.literal {
   color: var(--code-syntax-literal);
+}
+
+.link,
+.regexp,
+.escape,
+.url,
+.special_string {
+  color: var(--code-syntax-special-string);
 }
 
 .definition_propertyName {
   color: var(--code-syntax-definition-property);
+}
+
+.definition_name {
+  color: var(--code-syntax-definition-name);
 }

@@ -42,10 +42,19 @@ export default function SyntaxHighlighter({
           EditorView.editable.of(false),
           EditorView.theme(
             {
+              ".cm-scroller": {
+                // Shifting the horizontal scrollbar slightly below
+                // the bottom line. This reverts the bottom padding
+                // added on the `pre` tag.
+                paddingBottom: "0.857143em",
+                marginBottom: "-0.857143rem",
+              },
               ".cm-gutters": {
                 borderRight: "1px solid #739fee73",
                 color: "#739fee",
-                backgroundColor: "transparent",
+                // Matching the `pre` tag's background since the editor
+                // text sits below the gutter when scrolled horizontal.
+                backgroundColor: "var(--tw-prose-pre-bg)",
                 minWidth: "4ch",
                 marginRight: "12px",
               },

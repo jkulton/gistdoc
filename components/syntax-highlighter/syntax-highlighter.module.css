@@ -6,7 +6,6 @@
   --code-syntax-punctuation: #ffffff;
   --code-syntax-property: #81a1c1;
   --code-syntax-propertyname: #8fbcbb;
-  --code-syntax-definition-name: red;
   --code-syntax-definition-property: #88c0d0;
   --code-syntax-variable: #d8dee9;
   --code-syntax-function-variable: #8fbcbb;
@@ -22,7 +21,8 @@
 }
 
 .keyword,
-.moduleKeyword {
+.moduleKeyword,
+.className {
   color: var(--code-syntax-keyword);
   font-weight: 500;
 }
@@ -112,8 +112,4 @@
 
 .definition_propertyName {
   color: var(--code-syntax-definition-property);
-}
-
-.definition_name {
-  color: var(--code-syntax-definition-name);
 }

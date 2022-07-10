@@ -1,0 +1,115 @@
+.codeBlock {
+  --code-syntax-plain: #ffffff;
+  --code-syntax-comment: #616e88;
+  --code-syntax-keyword: #81a1c1;
+  --code-syntax-tag: #d08770;
+  --code-syntax-punctuation: #ffffff;
+  --code-syntax-property: #81a1c1;
+  --code-syntax-propertyname: #8fbcbb;
+  --code-syntax-definition-property: #88c0d0;
+  --code-syntax-variable: #d8dee9;
+  --code-syntax-function-variable: #8fbcbb;
+  --code-syntax-definition-variable: #d8dee9;
+  --code-syntax-static: #b48ead;
+  --code-syntax-string: #a3be8c;
+  --code-syntax-special-string: #d08770;
+  --code-syntax-literal: #d8dee9;
+  --code-syntax-atom: #b48ead;
+  --code-syntax-bracket: #e5e9f0;
+  --code-syntax-quotes: #e5e9f0;
+  --code-syntax-brace: #e5e9f0;
+}
+
+.keyword,
+.moduleKeyword,
+.className {
+  color: var(--code-syntax-keyword);
+  font-weight: 500;
+}
+
+.processingInstruction,
+.inserted,
+.string {
+  color: var(--code-syntax-string);
+}
+
+.variableName {
+  color: var(--code-syntax-variable);
+}
+
+.definition_variableName {
+  color: var(--code-syntax-definition-variable);
+}
+
+.function_variableName {
+  color: var(--code-syntax-function-variable);
+}
+
+.plain {
+  color: var(--code-syntax-plain);
+}
+
+.comment {
+  color: var(--code-syntax-comment);
+}
+
+.tag,
+.tagName {
+  color: var(--code-syntax-tag);
+}
+
+.punctuation {
+  color: var(--code-syntax-punctuation);
+}
+
+.number {
+  color: var(--code-syntax-static);
+}
+
+.atom,
+.bool,
+.special_variableName {
+  color: var(--code-syntax-atom);
+}
+
+.brace {
+  color: var(--code-syntax-brace);
+}
+
+.quote,
+.doubleQuote {
+  color: var(--code-syntax-quotes);
+}
+
+.angleBracket,
+.squareBracket,
+.paren {
+  color: var(--code-syntax-bracket);
+}
+
+.labelName,
+.typeName,
+.property {
+  color: var(--code-syntax-property);
+}
+
+.propertyName {
+  color: var(--code-syntax-propertyname);
+}
+
+.operator,
+.literal {
+  color: var(--code-syntax-literal);
+}
+
+.link,
+.regexp,
+.escape,
+.url,
+.special_string {
+  color: var(--code-syntax-special-string);
+}
+
+.definition_propertyName {
+  color: var(--code-syntax-definition-property);
+}

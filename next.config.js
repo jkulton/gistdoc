@@ -1,5 +1,7 @@
 module.exports = {
-  swcMinify: true,
+  // Leaving this off for now.
+  // Codemirror does not minify correctly with this on.
+  swcMinify: false,
   reactStrictMode: true,
   i18n: {
     locales: ["en"],
@@ -8,10 +10,10 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/:username/:gist_id',
-        destination: '/:gist_id',
+        source: "/:username/:gist_id",
+        destination: "/:gist_id",
         permanent: true,
       },
-    ]
-  }
-}
+    ];
+  },
+};

@@ -81,8 +81,8 @@ export default function ThemeToggle() {
             "select-none dark:rotate-0"
           }
         >
-          <Moon className="h-full p-1 inline-block" aria-hidden="true" />
-          <Sun className="h-full p-1 inline-block" aria-hidden="true" />
+          <Moon className="h-full p-1.5 inline-block" aria-hidden="true" />
+          <Sun className="h-full p-1.5 inline-block" aria-hidden="true" />
         </label>
       </div>
     </div>

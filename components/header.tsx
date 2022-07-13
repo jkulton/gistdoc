@@ -1,6 +1,7 @@
 import constants from "../constants";
 import { Link } from "./link";
 import Logo from "./logo";
+import ThemeToggle from "./theme-toggle/theme-toggle";
 
 interface HeaderProps {
   variant?: "minimal";
@@ -37,6 +38,7 @@ export default function Header({ variant }: HeaderProps) {
               </li>
             </>
           ) : null}
+          <ThemeToggle />
         </ol>
       </nav>
     </header>

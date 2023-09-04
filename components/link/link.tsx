@@ -1,9 +1,10 @@
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import { AnchorHTMLAttributes } from "react";
 
-export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export type LinkProps = {
   variant?: "subtle" | "button" | "unstyled";
-}
+} & NextLinkProps &
+  AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const variantClasses = {
   normal: "text-sky-600 no-underline hover:underline",
@@ -15,18 +16,17 @@ const variantClasses = {
 
 export default function Link({
   href,
-  variant,
+  variant = "unstyled",
   className,
   ...props
 }: React.PropsWithChildren<LinkProps>) {
   const baseClasses = variantClasses[variant] ?? variantClasses.normal;
 
   return (
-    <NextLink href={href}>
-      <a
-        {...props}
-        className={`${baseClasses}${className ? ` ${className}` : ""}`}
-      />
-    </NextLink>
+    <NextLink
+      href={href}
+      {...props}
+      className={`${baseClasses}${className ? ` ${className}` : ""}`}
+    />
   );
 }

@@ -8,7 +8,7 @@ export default function ThemeToggle() {
   // This is required to prevent the animation from playing on
   // initial mount as well as update the aria-label.
   const changedRef = useRef(false);
-  const [colorScheme, setColorScheme] = useState(null);
+  const [colorScheme, setColorScheme] = useState<"dark" | "light" | null>(null);
   const handleChange = useCallback(
     (ev) => {
       const colorScheme = resolveColorScheme(ev.target.checked);
@@ -56,7 +56,7 @@ export default function ThemeToggle() {
         // It's set to auto for the first time since the user didn't
         // actually change it and we set the theme automatically based
         // on preference.
-        aria-label={hasThemeChanged ? colorScheme : "auto"}
+        aria-label={(hasThemeChanged && colorScheme) || "auto"}
         aria-live="polite"
         id="theme-toggle"
         className={`sr-only peer`}

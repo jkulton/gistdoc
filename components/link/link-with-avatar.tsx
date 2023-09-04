@@ -10,12 +10,13 @@ export default function LinkWithAvatar({
   alt,
   href,
   children,
+  variant = "subtle",
   ...rest
 }: LinkWithAvatarProps) {
   return (
     <Link
       href={href}
-      variant="subtle"
+      variant={variant}
       className="flex items-center text-gray-500"
       {...rest}
     >

@@ -30,14 +30,17 @@ export default function CodeBlock({
     );
   }
 
-  const language = className.replace("language-", "");
+  const language = className?.replace("language-", "");
   const codeToParse = String(children?.[0] || "");
+  const child = language ? (
+    <SyntaxHighlighter language={language} code={codeToParse} />
+  ) : (
+    codeToParse
+  );
 
   return (
     <code className={className}>
-      <Suspense fallback={codeToParse}>
-        <SyntaxHighlighter language={language} code={codeToParse} />
-      </Suspense>
+      <Suspense fallback={codeToParse}>{child}</Suspense>
     </code>
   );
 }

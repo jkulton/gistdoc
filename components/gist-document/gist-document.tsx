@@ -22,7 +22,7 @@ export default function GistDocument({
   const filenames = Object.keys(files);
   const markdownFile = findMarkdownFile(filenames);
 
-  if (!markdownFile) return <UnsupportedGist />;
+  if (!markdownFile || !gistData) return <UnsupportedGist />;
 
   const { content } = files[markdownFile];
 

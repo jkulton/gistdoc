@@ -28,13 +28,15 @@ export default function SyntaxHighlighter({
   const languageConfig = languages.find((langConfig) =>
     langConfig.alias.includes(language)
   );
-  const block = useRef();
+  const block = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let mounted = true;
 
     (async function () {
-      const languageSupport = await languageConfig.load();
+      const languageSupport = languageConfig
+        ? await languageConfig.load()
+        : null;
 
       if (block.current && mounted) {
         const extensions = [
@@ -58,9 +60,12 @@ export default function SyntaxHighlighter({
           syntaxHighlighting(defaultHighlightStyle),
           syntaxHighlighting(highlightStyle),
           highlightSpecialChars(),
-          languageSupport,
           EditorState.tabSize.of(2),
         ];
+
+        if (languageSupport) {
+          extensions.push(languageSupport);
+        }
 
         let view = new EditorView({
           doc: code.trimEnd(),

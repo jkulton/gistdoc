@@ -1,9 +1,11 @@
+import type { Url } from "next/dist/shared/lib/router/router";
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import { AnchorHTMLAttributes } from "react";
 
 export type LinkProps = {
   variant?: "subtle" | "button" | "unstyled";
-} & NextLinkProps &
+  href?: Url;
+} & Omit<NextLinkProps, "href"> &
   AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const variantClasses = {
@@ -21,10 +23,11 @@ export default function Link({
   ...props
 }: React.PropsWithChildren<LinkProps>) {
   const baseClasses = variantClasses[variant] ?? variantClasses.normal;
+  const LinkComponent = href ? NextLink : "a";
 
   return (
-    <NextLink
-      href={href}
+    <LinkComponent
+      href={href || "#"}
       {...props}
       className={`${baseClasses}${className ? ` ${className}` : ""}`}
     />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link, { LinkProps } from "./link";
 
 interface LinkWithAvatarProps extends LinkProps {
@@ -23,7 +24,9 @@ export default function LinkWithAvatar({
       <img
         src={avatarUrl}
         alt={alt}
-        className="w-[28px] h-[28px] rounded-full mr-2"
+        width={28}
+        height={28}
+        className="rounded-full mr-2"
       />
       {children}
     </Link>
